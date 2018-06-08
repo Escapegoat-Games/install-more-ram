@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/imsane_7.png-8663bf78638018ff77aa539a8664f5d3.stex"
+path="res://.import/imsane_7.png-6a0bda1d0d1baa4d0989bd611a346b80.stex"
 
 [deps]
 
-source_file="res://Sprites/imsane_7.png"
+source_file="res://Assets/Sprites/imsane_7.png"
 source_md5="58f134934d687e813ed6804c2d6d7a89"
 
-dest_files=[ "res://.import/imsane_7.png-8663bf78638018ff77aa539a8664f5d3.stex" ]
+dest_files=[ "res://.import/imsane_7.png-6a0bda1d0d1baa4d0989bd611a346b80.stex" ]
 dest_md5="44adf6bb23b6ba2bb6d971136d613d26"
 
 [params]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ram_010000.png-c9cf3a1428deb5a9841966b59f8172da.stex"
+path="res://.import/dialogueBox.png-823c15630a1bf3e792c9122da1c4ff41.stex"
 
 [deps]
 
-source_file="res://Sprites/ram_010000.png"
-source_md5="e43538a4bc0108d3136abf31cbc20608"
+source_file="res://Assets/Sprites/dialogueBox.png"
+source_md5="178ed01703d53b2dc41149919d9a4f0d"
 
-dest_files=[ "res://.import/ram_010000.png-c9cf3a1428deb5a9841966b59f8172da.stex" ]
-dest_md5="c537cb5b670321a253c027a70752ae8b"
+dest_files=[ "res://.import/dialogueBox.png-823c15630a1bf3e792c9122da1c4ff41.stex" ]
+dest_md5="7ed2591e153b00c7a821dd36e10e762b"
 
 [params]
 

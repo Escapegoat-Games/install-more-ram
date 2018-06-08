@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ram_010001.png-81b4043a862e83da5c1c695dbadb505f.stex"
+path="res://.import/ram_010001.png-1f75e7ec169797e82af3b0a598cdc47a.stex"
 
 [deps]
 
-source_file="res://Sprites/ram_010001.png"
+source_file="res://Assets/Sprites/ram_010001.png"
 source_md5="ac1e37fe8693ce31258c90f1de48d35d"
 
-dest_files=[ "res://.import/ram_010001.png-81b4043a862e83da5c1c695dbadb505f.stex" ]
+dest_files=[ "res://.import/ram_010001.png-1f75e7ec169797e82af3b0a598cdc47a.stex" ]
 dest_md5="8187664314959fd1674dede275ba6085"
 
 [params]
