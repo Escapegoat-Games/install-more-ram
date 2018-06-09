@@ -22,7 +22,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="AreaNASA" type="Node2D"]
+[node name="AreaNASA" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 left_id = -1
@@ -80,7 +80,7 @@ texture = ExtResource( 4 )
 
 [node name="AnimatedNPC" parent="NPCs" index="1" instance=ExtResource( 5 )]
 
-dialogue_text = [ "I'm an engineer" ]
+dialogue_text = [ "Ugh. We're never gonna get to the moon with our measly IBMs!", "We need more processing but where to get it!?", "Hm? Who are you?", "Go away useless sheep!" ]
 textures = SubResource( 2 )
 
 

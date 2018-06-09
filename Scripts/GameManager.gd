@@ -26,21 +26,31 @@ func _ready():
 	]
 	event_rams[0].position.x = -600
 	event_rams[0].area = 0
+	event_rams[0].get_node("Sprite").flip_h = true
 	event_rams[0].dialogue_text = [
-		"Install me",
-		"I'm more ram"
+		"Howdy.",
+		"That's a mighty beat PC ya got there.",
+		"Lemme join y'all and spiff it up a bit.",
+		"> Installed ram (1x)",
+		"Radical.",
 	]
-	event_rams[1].position.x = 500
+	event_rams[1].position.x = -500
 	event_rams[1].area = 1
 	event_rams[1].dialogue_text = [
-		"I wish to join your party",
-		"Ram has joined your party"
+		"Hey, remember me?\nIt's your brother, Shep!",
+		"..............................................",
+		"Alright. Ya got me. I'm just a con,\nbut help a brother sheep out, eh.",
+		"> Nervously installed ram(?) (1x)",
+		"Awooo~ You're feeling REAL fluffy...heheh."
 	]
 	event_rams[2].position.x = 700
 	event_rams[2].area = 3
 	event_rams[2].dialogue_text = [
-		"I wish to join your party",
-		"Ram has joined your party"
+		"Greetings, friend goat.",
+		"We of the Capricorn Brotherhood have broken free\nfrom the shackles of Farmer John.",
+		"Let us join you, comrade, and together,\n we will bring forth justice for all rams.",
+		"> Installed ram (20000x)",
+		"Onwards! For glory!",
 	]
 	
 	load_current_area()
