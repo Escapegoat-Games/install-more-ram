@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Area.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/BG/town_01_0.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Assets/Sprites/sign_fin.png" type="Texture" id=4]
 [ext_resource path="res://Instances/AnimatedNPC.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sprites/nasa_00.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/nasa_01.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/nasa_01 (2).png" type="Texture" id=7]
+[ext_resource path="res://Scripts/EndingNPC.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,6 +15,15 @@ custom_solver_bias = 0.0
 extents = Vector2( 10, 500 )
 
 [sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
@@ -80,7 +90,14 @@ texture = ExtResource( 4 )
 
 [node name="AnimatedNPC" parent="NPCs" index="1" instance=ExtResource( 5 )]
 
-dialogue_text = [ "Ugh. We're never gonna get to the moon with our measly IBMs!", "We need more processing but where to get it!?", "Hm? Who are you?", "Go away useless sheep!" ]
+dialogue_text = [ "Ugh. We're never gonna get to the moon with our measly AGCs!", "We need more processing power, but where to get it!?", "Hm? Who are you?", "Go away useless sheep!" ]
 textures = SubResource( 2 )
+
+[node name="EndingNPC" parent="NPCs" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( -358.29, 0 )
+script = ExtResource( 8 )
+dialogue_text = [ "I take you to moon" ]
+textures = SubResource( 3 )
 
 

@@ -86,6 +86,10 @@ func _on_Player_move_right_area():
 		load_current_area()
 		emit_signal("moved_right")
 
+func _on_HUD_check_end_game():
+	if ram_count == 3:
+		print("end game")
+
 
 func _on_HUD_add_goat():
 	ram_count += 1

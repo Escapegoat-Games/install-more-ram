@@ -209,6 +209,8 @@ script = ExtResource( 6 )
 
 [connection signal="add_goat" from="HUD" to="Player" method="_on_HUD_add_goat"]
 
+[connection signal="check_end_game" from="HUD" to="GameManager" method="_on_HUD_check_end_game"]
+
 [connection signal="end_talk" from="HUD" to="Player" method="_on_HUD_end_talk"]
 
 [connection signal="start_talk" from="HUD" to="Player" method="_on_HUD_start_talk"]

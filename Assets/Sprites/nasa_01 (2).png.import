@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nasa_01.png-fe79c0c591e56d1b34decfed0214e323.stex"
+path="res://.import/nasa_01 (2).png-99b541a3bd9d0e33e8dd2c6b85cc7d78.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/nasa_01.png"
-source_md5="420a84556f48977d0434a67955c39097"
+source_file="res://Assets/Sprites/nasa_01 (2).png"
+source_md5="6cc8ba73dbe944fe65a312acde91ceda"
 
-dest_files=[ "res://.import/nasa_01.png-fe79c0c591e56d1b34decfed0214e323.stex" ]
-dest_md5="c290eb9f43b59cc16f0a59b48e60a688"
+dest_files=[ "res://.import/nasa_01 (2).png-99b541a3bd9d0e33e8dd2c6b85cc7d78.stex" ]
+dest_md5="55a1cad87d0c0c9fa14e7bb68dd6897c"
 
 [params]
 

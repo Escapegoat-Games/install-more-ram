@@ -14,6 +14,7 @@ var can_play = false
 signal start_talk
 signal end_talk
 signal add_goat
+signal check_end_game
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -31,9 +32,14 @@ func _process(delta):
 				current_array_index += 1
 			else:
 				turn_off_dialogue()
+				
+				# check if event NPC
 				if current_NPC.get("is_talked_to") != null:
 					current_NPC.activate()
 					emit_signal("add_goat")
+				# check if ending NPC
+				elif current_NPC.get("is_end_NPC"):
+					emit_signal("check_end_game")
 				
 func turn_on_dialogue():
 	current_array_index = 0

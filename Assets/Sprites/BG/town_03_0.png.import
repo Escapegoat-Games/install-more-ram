@@ -7,10 +7,10 @@ path="res://.import/town_03_0.png-a833196f9a32ef09f563136d537c3072.stex"
 [deps]
 
 source_file="res://Assets/Sprites/BG/town_03_0.png"
-source_md5="0506d1a781349de5cd186fd24354068d"
+source_md5="c9a949fc36081dc152656aad6875ffcb"
 
 dest_files=[ "res://.import/town_03_0.png-a833196f9a32ef09f563136d537c3072.stex" ]
-dest_md5="944ca2abdc1ca856225fd908b4ce1e90"
+dest_md5="7a98e670446752f6b8e58aaf807315d8"
 
 [params]
 
