@@ -1,5 +1,7 @@
 extends Node
 
+var ram_count = 0
+
 var current_area_index = 1
 var current_area
 var areas
@@ -11,16 +13,35 @@ signal moved_right
 func _ready():
 	areas = [
 		load("res://Scenes/AreaNASA.tscn"),
-		load("res://Scenes/AreaTown.tscn")
+		load("res://Scenes/AreaTown.tscn"),
+		load("res://Scenes/AreaTown2.tscn"),
+		load("res://Scenes/AreaFarm.tscn"),
 	]
 	
 	# hardcode event rams
 	event_rams = [
 		load("res://Instances/EventNPC.tscn").instance(),
+		load("res://Instances/EventNPC.tscn").instance(),
+		load("res://Instances/EventNPC.tscn").instance(),
 	]
 	event_rams[0].position.x = -600
 	event_rams[0].area = 0
-	event_rams[0].dialogue_text = ["hello guyos"]
+	event_rams[0].dialogue_text = [
+		"Install me",
+		"I'm more ram"
+	]
+	event_rams[1].position.x = 500
+	event_rams[1].area = 1
+	event_rams[1].dialogue_text = [
+		"I wish to join your party",
+		"Ram has joined your party"
+	]
+	event_rams[2].position.x = 700
+	event_rams[2].area = 3
+	event_rams[2].dialogue_text = [
+		"I wish to join your party",
+		"Ram has joined your party"
+	]
 	
 	load_current_area()
 
@@ -54,3 +75,7 @@ func _on_Player_move_right_area():
 		current_area_index = current_area.right_id
 		load_current_area()
 		emit_signal("moved_right")
+
+
+func _on_HUD_add_goat():
+	ram_count += 1

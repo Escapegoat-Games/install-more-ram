@@ -25,7 +25,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 [node name="Player" type="KinematicBody2D" parent="." index="0"]
 
@@ -204,6 +204,10 @@ script = ExtResource( 6 )
 [connection signal="area_entered" from="Player/TalkingArea2D" to="HUD" method="_on_TalkingArea2D_area_entered"]
 
 [connection signal="area_exited" from="Player/TalkingArea2D" to="HUD" method="_on_TalkingArea2D_area_exited"]
+
+[connection signal="add_goat" from="HUD" to="GameManager" method="_on_HUD_add_goat"]
+
+[connection signal="add_goat" from="HUD" to="Player" method="_on_HUD_add_goat"]
 
 [connection signal="end_talk" from="HUD" to="Player" method="_on_HUD_end_talk"]
 

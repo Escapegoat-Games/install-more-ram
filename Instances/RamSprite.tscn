@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/ram_010001.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/RamSprite.gd" type="Script" id=3]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
@@ -16,8 +16,10 @@ _sections_unfolded = [ "Resource" ]
 
 [node name="RamSprite" type="AnimatedSprite"]
 
-frames = SubResource( 2 )
+z_as_relative = false
+frames = SubResource( 1 )
 animation = "default"
 script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
 
 

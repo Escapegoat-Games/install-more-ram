@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
-var speed = 1000
+var ram_count = 0
+var ram_template = load("res://Instances/RamSprite.tscn")
+
+var speed = 500
 var can_move = true
 
 signal talk
@@ -42,3 +45,11 @@ func _on_GameManager_moved_left():
 
 func _on_GameManager_moved_right():
 	position = Vector2(-999, 50)
+
+
+func _on_HUD_add_goat():
+	var ram = ram_template.instance()
+	ram_count += 1
+	ram.position = Vector2(0, -70*ram_count)
+	ram.z_index = -ram_count
+	add_child(ram)

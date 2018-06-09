@@ -19,9 +19,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="NPC" type="Area2D" index="0"]
+[node name="NPC" type="Area2D"]
 
-z_index = -1
+z_index = -100
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

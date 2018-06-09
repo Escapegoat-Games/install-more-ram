@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [  ],
@@ -19,7 +19,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
@@ -30,7 +30,7 @@ animations = [ {
 
 [node name="AnimatedNPC" type="Area2D"]
 
-z_index = -1
+z_index = -100
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -50,16 +50,15 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
 playing = true
 
 [node name="Indicator" type="AnimatedSprite" parent="." index="2"]
 
 visible = false
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "default"
-frame = 1
 playing = true
 offset = Vector2( 0, -100 )
 

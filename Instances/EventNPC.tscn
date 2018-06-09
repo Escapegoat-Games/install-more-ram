@@ -38,10 +38,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="EventNPC" type="Area2D" index="0"]
+[node name="EventNPC" type="Area2D"]
 
 position = Vector2( 0, 50 )
-z_index = -1
+z_index = -100
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -70,7 +70,6 @@ playing = true
 visible = false
 frames = SubResource( 3 )
 animation = "default"
-frame = 1
 playing = true
 offset = Vector2( 0, -100 )
 

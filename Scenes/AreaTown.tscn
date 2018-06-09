@@ -11,15 +11,17 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 500 )
 
-[node name="AreaTown" type="Node2D"]
+[node name="AreaTown" type="Node2D" index="0"]
 
+z_index = -101
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 left_id = 0
 right_id = 2
 
 [node name="BG" type="Sprite" parent="." index="0"]
 
-z_index = -10
+z_index = -101
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
