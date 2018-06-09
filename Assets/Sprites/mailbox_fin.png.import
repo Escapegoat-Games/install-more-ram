@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogueBox.png-823c15630a1bf3e792c9122da1c4ff41.stex"
+path="res://.import/mailbox_fin.png-658b8aa080c7d3542652372953059383.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/dialogueBox.png"
-source_md5="178ed01703d53b2dc41149919d9a4f0d"
+source_file="res://Assets/Sprites/mailbox_fin.png"
+source_md5="f7703b59e70ce4ce9683da97b73d40b1"
 
-dest_files=[ "res://.import/dialogueBox.png-823c15630a1bf3e792c9122da1c4ff41.stex" ]
-dest_md5="7ed2591e153b00c7a821dd36e10e762b"
+dest_files=[ "res://.import/mailbox_fin.png-658b8aa080c7d3542652372953059383.stex" ]
+dest_md5="176d3f8d835be479d5772a3d5009a728"
 
 [params]
 

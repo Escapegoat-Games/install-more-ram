@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-onready var dialogueBox = $UI/VBoxContainer/DialogueBox
-onready var dialogueText = $UI/VBoxContainer/DialogueBox/DialogueText
+onready var dialogue_box = $UI/VBoxContainer/DialogueBox
+onready var dialogue_text = $UI/VBoxContainer/DialogueBox/DialogueText
 
-var currentText = []
-var currentArrayIndex = 0
-var currentTextIndex = 0
-var isPlaying = false
-var canPlay = false
+var current_text = []
+var current_array_index = 0
+var current_text_index = 0
+var is_playing = false
+var can_play = false
 
 signal start_talk
 signal end_talk
@@ -18,38 +18,42 @@ func _ready():
 	pass
 
 func _process(delta):
-	if isPlaying:
-		if currentTextIndex < len(currentText[currentArrayIndex]):
-			dialogueText.text = currentText[currentArrayIndex].substr(0, currentTextIndex+1)
-			currentTextIndex += 1
+	if is_playing:
+		if current_text_index < len(current_text[current_array_index]):
+			dialogue_text.text = current_text[current_array_index].substr(0, current_text_index+1)
+			current_text_index += 1
 		elif Input.is_action_just_pressed("select"):
-			if currentArrayIndex < len(currentText)-1:
-				currentTextIndex = 0
-				currentArrayIndex += 1
+			if current_array_index < len(current_text)-1:
+				current_text_index = 0
+				current_array_index += 1
 			else:
 				turn_off_dialogue()
 				
 func turn_on_dialogue():
-	currentArrayIndex = 0
-	currentTextIndex = 0
-	dialogueBox.show()
-	isPlaying = true
+	current_array_index = 0
+	current_text_index = 0
+	dialogue_box.show()
+	is_playing = true
 	
 func turn_off_dialogue():
-	isPlaying = false
-	dialogueBox.hide()
+	is_playing = false
+	dialogue_box.hide()
 	emit_signal("end_talk")
 
 # check if player touching npc
 func _on_TalkingArea2D_area_entered( area ):
 	if not area.get("dialogue_text") == null:
-		currentText = area.dialogue_text
-		canPlay = true
+		current_text = area.dialogue_text
+		can_play = true
+		
+		# turn on indicator
+		area.turn_on_indicator()
 
 func _on_TalkingArea2D_area_exited( area ):
-	canPlay = false
+	can_play = false
+	area.turn_off_indicator()
 
 func _on_Player_talk():
-	if canPlay:
+	if can_play:
 		turn_on_dialogue()
 		emit_signal("start_talk")

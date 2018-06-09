@@ -3,8 +3,8 @@ extends KinematicBody2D
 onready var ram_sprite = $AnimatedSprite
 
 var speed = 200
-var isMoving = false
-var canMove = true
+var is_moving = false
+var can_move = true
 
 signal talk
 
@@ -16,27 +16,27 @@ func _ready():
 func _process(delta):
 	
 	# animation and movement
-	isMoving = false
+	is_moving = false
 	
-	if Input.is_action_pressed("move_left") && canMove:
+	if Input.is_action_pressed("move_left") && can_move:
 		self.move_and_slide(Vector2(-speed, 0))
-		isMoving = true
+		is_moving = true
 		ram_sprite.flip_h = false
-	elif Input.is_action_pressed("move_right") && canMove:
+	elif Input.is_action_pressed("move_right") && can_move:
 		self.move_and_slide(Vector2(speed, 0))
-		isMoving = true
+		is_moving = true
 		ram_sprite.flip_h = true
 		
-	ram_sprite.playing = isMoving
+	ram_sprite.playing = is_moving
 	if ram_sprite.playing == false:
 		ram_sprite.frame = 0
 	
 	# talk
-	if canMove && Input.is_action_pressed("move_up"):
+	if can_move && Input.is_action_pressed("move_up"):
 		emit_signal("talk")
 
 func _on_HUD_end_talk():
-	canMove = true
+	can_move = true
 
 func _on_HUD_start_talk():
-	canMove = false
+	can_move = false
