@@ -1,6 +1,6 @@
 extends Node
 
-var current_area_index = 0
+var current_area_index = 1
 var current_area
 var areas
 

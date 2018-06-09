@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/AnimatedNPC.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/UI/arrow00.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/UI/arrow01.png" type="Texture" id=4]
@@ -9,6 +9,15 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -19,7 +28,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="NPC" type="Area2D"]
+[node name="AnimatedNPC" type="Area2D"]
 
 z_index = -1
 input_pickable = true
@@ -32,21 +41,25 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Z Index" ]
 dialogue_text = null
-texture = null
+texture = ExtResource( 2 )
+textures = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 3 )
+animation = "default"
+playing = true
 
 [node name="Indicator" type="AnimatedSprite" parent="." index="2"]
 
 visible = false
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 offset = Vector2( 0, -100 )
 

@@ -1,14 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Area.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/BG/town_01_0.png" type="Texture" id=2]
 [ext_resource path="res://Instances/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sprites/sign_fin.png" type="Texture" id=4]
+[ext_resource path="res://Instances/AnimatedNPC.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/nasa_00.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/nasa_01.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 500 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="AreaNASA" type="Node2D" index="0"]
 
@@ -59,11 +71,16 @@ shape = SubResource( 1 )
 
 [node name="NPCs" type="Node2D" parent="." index="1"]
 
-[node name="NPC2_sign" parent="NPCs" index="0" instance=ExtResource( 3 )]
+[node name="NPC_sign" parent="NPCs" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 769.575, 0 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 dialogue_text = [ "This is NASA", "=> To Goatville" ]
 texture = ExtResource( 4 )
+
+[node name="AnimatedNPC" parent="NPCs" index="1" instance=ExtResource( 5 )]
+
+dialogue_text = [ "I'm an engineer" ]
+textures = SubResource( 2 )
 
 
