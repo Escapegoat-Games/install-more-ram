@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Area.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/BG/town_00_2.png" type="Texture" id=2]
+[ext_resource path="res://Instances/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sprites/mailbox_fin.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/sign_fin.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 500 )
+
+[node name="AreaTown" type="Node2D" index="0"]
+
+editor/display_folded = true
+script = ExtResource( 1 )
+left_id = 0
+right_id = 2
+
+[node name="BG" type="Sprite" parent="." index="0"]
+
+z_index = -10
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="LeftWall" type="StaticBody2D" parent="BG" index="0"]
+
+editor/display_folded = true
+position = Vector2( -1000, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/LeftWall" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="RightWall" type="StaticBody2D" parent="BG" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1000, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/RightWall" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="NPCs" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="NPC_mailbox2" parent="NPCs" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 911.521, 0 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+dialogue_text = [ "Guliard's House", "This is my mail.", "Do not steal" ]
+texture = ExtResource( 4 )
+
+[node name="NPC2_sign" parent="NPCs" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -847.153, 0 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+dialogue_text = [ "Welcome to Goatville", "<= To NASA", "=> To Farm" ]
+texture = ExtResource( 5 )
+
+[node name="NPC3_mailbox1" parent="NPCs" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 218.309, 0 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+dialogue_text = [ "Rawson's House", "It's full of unread mail.." ]
+texture = ExtResource( 4 )
+
+
