@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 200
+var speed = 1000
 var can_move = true
 
 signal talk

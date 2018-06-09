@@ -3,6 +3,8 @@ extends CanvasLayer
 onready var dialogue_box = $UI/VBoxContainer/DialogueBox
 onready var dialogue_text = $UI/VBoxContainer/DialogueBox/DialogueText
 
+var current_NPC
+
 var current_text = []
 var current_array_index = 0
 var current_text_index = 0
@@ -28,6 +30,8 @@ func _process(delta):
 				current_array_index += 1
 			else:
 				turn_off_dialogue()
+				if current_NPC.get("is_talked_to") != null:
+					current_NPC.activate()
 				
 func turn_on_dialogue():
 	current_array_index = 0
@@ -43,6 +47,7 @@ func turn_off_dialogue():
 # check if player touching npc
 func _on_TalkingArea2D_area_entered( area ):
 	if not area.get("dialogue_text") == null:
+		current_NPC = area
 		current_text = area.dialogue_text
 		can_play = true
 		
@@ -54,6 +59,6 @@ func _on_TalkingArea2D_area_exited( area ):
 	area.turn_off_indicator()
 
 func _on_Player_talk():
-	if can_play:
+	if can_play and not current_NPC.get("is_talked_to"):
 		turn_on_dialogue()
 		emit_signal("start_talk")
