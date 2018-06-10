@@ -12,9 +12,8 @@ animations = [ {
 "name": "default",
 "speed": 30.0
 } ]
-_sections_unfolded = [ "Resource" ]
 
-[node name="RamSprite" type="AnimatedSprite"]
+[node name="RamSprite" type="AnimatedSprite" index="0"]
 
 z_as_relative = false
 frames = SubResource( 1 )

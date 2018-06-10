@@ -1,35 +1,45 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Instances/RamSprite.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Sprites/UI/dialogueBox.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Font/UbuntuMono-R.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sprites/ram_animated0000.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/ram_animated0001.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/RamSprite.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/UI/dialogueBox.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Font/UbuntuMono-R.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 30, 30 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 100, 80 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 0, 50 )
 input_pickable = false
 collision_layer = 1
@@ -68,11 +78,16 @@ _sections_unfolded = [ "Limit" ]
 
 shape = SubResource( 1 )
 
-[node name="RamSprite" parent="Player" index="2" instance=ExtResource( 2 )]
+[node name="CompRamSprite" type="AnimatedSprite" parent="Player" index="2"]
+
+z_as_relative = false
+frames = SubResource( 2 )
+animation = "default"
+script = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="TalkingArea2D" type="Area2D" parent="Player" index="3"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -83,7 +98,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/TalkingArea2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="HUD" type="CanvasLayer" parent="." index="1"]
 
@@ -93,7 +108,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 3 )
+script = ExtResource( 5 )
 
 [node name="UI" type="MarginContainer" parent="HUD" index="0"]
 
@@ -160,7 +175,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
@@ -182,7 +197,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "hey guys
 I sell you sheep for two dola"
@@ -194,7 +209,7 @@ _sections_unfolded = [ "Margin", "Size Flags", "custom_colors", "custom_fonts", 
 
 [node name="GameManager" type="Node" parent="." index="2"]
 
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 
 [connection signal="move_left_area" from="Player" to="GameManager" method="_on_Player_move_left_area"]
 
