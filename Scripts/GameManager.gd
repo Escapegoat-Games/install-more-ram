@@ -88,7 +88,7 @@ func _on_Player_move_right_area():
 		emit_signal("moved_right")
 
 func _on_HUD_check_end_game():
-	if ram_count == 0:
+	if ram_count == 3:
 		print("end game")
 		get_tree().change_scene("res://EndingMovie.tscn")
 		print("end game done")

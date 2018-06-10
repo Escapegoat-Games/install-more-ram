@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/EndingMovie.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Video/ending_frames/end_00.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Video/ending_frames/end_01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Video/ending_frames/end_01_1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Video/ending_frames/end_02.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Video/ending_frames/end_03.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Video/ending_frames/end_04.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Video/intro_frames/intro_text_03.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Video/intro_frames/camera-shutter-click-08.wav" type="AudioStream" id=9]
 
-[node name="EndingMovie" type="MarginContainer" index="0"]
+[node name="EndingMovie" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -13,6 +21,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
+next_scene_path = "res://IntroMovie.tscn"
+img_01 = ExtResource( 2 )
+img_02 = ExtResource( 3 )
+img_03 = ExtResource( 4 )
+img_04 = ExtResource( 5 )
+img_05 = ExtResource( 6 )
+img_06 = ExtResource( 7 )
+img_07 = ExtResource( 8 )
+s = ExtResource( 9 )
 
 [node name="VideoPlayer" type="TextureRect" parent="." index="0"]
 
@@ -28,8 +46,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 1 )
 expand = true
 stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
