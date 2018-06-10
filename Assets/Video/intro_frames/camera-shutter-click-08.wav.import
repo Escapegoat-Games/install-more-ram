@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/camera-shutter-click-08.wav-542b2fb67e4c880ffe859f318bd1a23c.sample"
+
+[deps]
+
+source_file="res://Assets/Video/intro_frames/camera-shutter-click-08.wav"
+source_md5="ffd9c12ae1ac362b4fb6e6554de906e0"
+
+dest_files=[ "res://.import/camera-shutter-click-08.wav-542b2fb67e4c880ffe859f318bd1a23c.sample" ]
+dest_md5="36660d903309bc028258633a3bd5fb66"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Movie.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Video/intro_0.ogv" type="VideoStream" id=2]
+[ext_resource path="res://Assets/Video/intro_frames/intro_text_00.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Video/intro_frames/intro_00.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Video/intro_frames/intro_text_01.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Video/intro_frames/intro_01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Video/intro_frames/intro_text_02.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Video/intro_frames/intro_02_edited.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Video/intro_frames/intro_text_03.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Video/intro_frames/camera-shutter-click-01.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Video/intro_frames/camera-shutter-click-08.wav" type="AudioStream" id=10]
 
-[node name="EndingMovie" type="MarginContainer" index="0"]
+[node name="IntroMovie" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -16,26 +24,40 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 next_scene_path = "res://Game.tscn"
-vid_length = 20.0
+img_01 = ExtResource( 2 )
+img_02 = ExtResource( 3 )
+img_03 = ExtResource( 4 )
+img_04 = ExtResource( 5 )
+img_05 = ExtResource( 6 )
+img_06 = ExtResource( 7 )
+img_07 = ExtResource( 8 )
+sound_01 = ExtResource( 9 )
+sound_02 = ExtResource( 10 )
 
-[node name="VideoPlayer" type="VideoPlayer" parent="." index="0"]
+[node name="VideoPlayer" type="TextureRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 1024.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-audio_track = 0
-stream = ExtResource( 2 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = null
 volume_db = 0.0
 autoplay = true
-paused = false
-expand = true
-buffering_msec = 500
+mix_target = 0
 bus = "Master"
 
 

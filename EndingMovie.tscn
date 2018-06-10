@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Movie.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Video/intro_0.ogv" type="VideoStream" id=2]
+[ext_resource path="res://Assets/Video/intro_frames/intro_00.png" type="Texture" id=2]
 
-[node name="EndingMovie" type="MarginContainer" index="0"]
+[node name="EndingMovie" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -16,9 +16,17 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 next_scene_path = "res://Game.tscn"
-vid_length = 20.0
+img_01 = null
+img_02 = null
+img_03 = null
+img_04 = null
+img_05 = null
+img_06 = null
+img_07 = null
+sound_01 = null
+sound_02 = null
 
-[node name="VideoPlayer" type="VideoPlayer" parent="." index="0"]
+[node name="VideoPlayer" type="TextureRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -32,13 +40,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-audio_track = 0
-stream = ExtResource( 2 )
-volume_db = 0.0
-autoplay = true
-paused = false
+texture = ExtResource( 2 )
 expand = true
-buffering_msec = 500
-bus = "Master"
+stretch_mode = 0
 
 
