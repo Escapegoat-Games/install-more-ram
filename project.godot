@@ -10,10 +10,10 @@ config_version=3
 
 [application]
 
-config/name="installMoreRam"
+config/name="Install More Ram"
 run/main_scene="res://IntroMovie.tscn"
 boot_splash/image="res://logo_splash.png"
-config/icon="res://icon.png"
+config/icon="res://game_logo0000.png"
 
 [display]
 
