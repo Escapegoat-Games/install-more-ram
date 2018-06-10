@@ -103,4 +103,5 @@ func _on_Player_talk():
 func _on_GameManager_play_fail_text():
 	current_text = current_NPC.fail_dialogue_text
 	current_NPC.is_playing_fail_text = true
+	emit_signal("start_talk")
 	turn_on_dialogue()
