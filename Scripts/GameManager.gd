@@ -9,6 +9,7 @@ var event_rams
 
 signal moved_left
 signal moved_right
+signal play_fail_text
 
 func _ready():
 	areas = [
@@ -89,6 +90,8 @@ func _on_Player_move_right_area():
 func _on_HUD_check_end_game():
 	if ram_count == 3:
 		print("end game")
+	else:
+		emit_signal("play_fail_text")
 
 
 func _on_HUD_add_goat():

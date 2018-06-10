@@ -37,9 +37,15 @@ func _process(delta):
 				if current_NPC.get("is_talked_to") != null:
 					current_NPC.activate()
 					emit_signal("add_goat")
+					
 				# check if ending NPC
 				elif current_NPC.get("is_end_NPC"):
-					emit_signal("check_end_game")
+					if not current_NPC.is_playing_fail_text:
+						emit_signal("check_end_game")
+					else:
+						current_NPC.is_playing_fail_text = false
+						current_text = current_NPC.dialogue_text
+					
 				
 func turn_on_dialogue():
 	current_array_index = 0
@@ -70,3 +76,9 @@ func _on_Player_talk():
 	if can_play and not current_NPC.get("is_talked_to"):
 		turn_on_dialogue()
 		emit_signal("start_talk")
+
+
+func _on_GameManager_play_fail_text():
+	current_text = current_NPC.fail_dialogue_text
+	current_NPC.is_playing_fail_text = true
+	turn_on_dialogue()

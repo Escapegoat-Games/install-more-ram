@@ -25,10 +25,11 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 [node name="Player" type="KinematicBody2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 0, 50 )
 input_pickable = false
 collision_layer = 1
@@ -218,5 +219,7 @@ script = ExtResource( 6 )
 [connection signal="moved_left" from="GameManager" to="Player" method="_on_GameManager_moved_left"]
 
 [connection signal="moved_right" from="GameManager" to="Player" method="_on_GameManager_moved_right"]
+
+[connection signal="play_fail_text" from="GameManager" to="HUD" method="_on_GameManager_play_fail_text"]
 
 
