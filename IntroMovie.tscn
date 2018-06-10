@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Movie.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Video/intro_frames/intro_text_00.png" type="Texture" id=2]
@@ -9,9 +9,8 @@
 [ext_resource path="res://Assets/Video/intro_frames/intro_02_edited.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Video/intro_frames/intro_text_03.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Video/intro_frames/camera-shutter-click-01.wav" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Video/intro_frames/camera-shutter-click-08.wav" type="AudioStream" id=10]
 
-[node name="IntroMovie" type="MarginContainer" index="0"]
+[node name="IntroMovie" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -32,7 +31,6 @@ img_05 = ExtResource( 6 )
 img_06 = ExtResource( 7 )
 img_07 = ExtResource( 8 )
 sound_01 = ExtResource( 9 )
-sound_02 = ExtResource( 10 )
 
 [node name="VideoPlayer" type="TextureRect" parent="." index="0"]
 

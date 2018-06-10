@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ding.wav-cc2d5a7d938d4218ab77139d1bb2998d.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/ding.wav"
+source_md5="94cdcd4fadf2fe5a1e2e958178ea8c05"
+
+dest_files=[ "res://.import/ding.wav-cc2d5a7d938d4218ab77139d1bb2998d.sample" ]
+dest_md5="a17ccf4b9a717fc7f5baee1f62f6ca29"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

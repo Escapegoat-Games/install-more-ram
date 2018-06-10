@@ -2,6 +2,7 @@ extends CanvasLayer
 
 onready var dialogue_box = $UI/VBoxContainer/DialogueBox
 onready var dialogue_text = $UI/VBoxContainer/DialogueBox/DialogueText
+onready var sfx_player = $SFXPlayer
 
 var current_NPC
 
@@ -10,6 +11,12 @@ var current_array_index = 0
 var current_text_index = 0
 var is_playing = false
 var can_play = false
+
+var sfx_01 = load("res://Assets/SFX/blip.wav")
+var sfx_02 = load("res://Assets/SFX/next.wav")
+var sfx_03 = load("res://Assets/SFX/ding.wav")
+var sfx_04 = load("res://Assets/SFX/openTextBox.wav")
+var sfx_05 = load("res://Assets/SFX/save.wav")
 
 signal start_talk
 signal end_talk
@@ -26,10 +33,22 @@ func _process(delta):
 		if current_text_index < len(current_text[current_array_index]):
 			dialogue_text.text = current_text[current_array_index].substr(0, current_text_index+1)
 			current_text_index += 1
+			
+			# play celebration
+			if current_text_index-1 == 0 and current_text[current_array_index][current_text_index-1] == ">":
+				print("hi")
+				sfx_player.stream = sfx_05
+				sfx_player.play()
+			
 		elif Input.is_action_just_pressed("select"):
 			if current_array_index < len(current_text)-1:
 				current_text_index = 0
 				current_array_index += 1
+				
+				# sfx
+				sfx_player.stream = sfx_03
+				sfx_player.play()
+				
 			else:
 				turn_off_dialogue()
 				
@@ -76,6 +95,10 @@ func _on_Player_talk():
 	if can_play and not current_NPC.get("is_talked_to"):
 		turn_on_dialogue()
 		emit_signal("start_talk")
+		
+		# sfx
+		sfx_player.stream = sfx_04
+		sfx_player.play()
 
 
 func _on_GameManager_play_fail_text():

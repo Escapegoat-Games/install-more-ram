@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/openTextBox.wav-f7a1a418136371f720ca6889f4dce0e5.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/openTextBox.wav"
+source_md5="512ce72d936581b901b840e87564da44"
+
+dest_files=[ "res://.import/openTextBox.wav-f7a1a418136371f720ca6889f4dce0e5.sample" ]
+dest_md5="d570727b73215c954bb33bda751c458b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

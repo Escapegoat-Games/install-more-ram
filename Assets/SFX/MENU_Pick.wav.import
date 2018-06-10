@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MENU_Pick.wav-52498a26d549934f944303a134c7cbed.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/MENU_Pick.wav"
+source_md5="a2720807049eb2fb509b412718866f94"
+
+dest_files=[ "res://.import/MENU_Pick.wav-52498a26d549934f944303a134c7cbed.sample" ]
+dest_md5="7c13a8bba5d0ddf1211760f5ee655f8a"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

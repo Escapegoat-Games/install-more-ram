@@ -24,7 +24,6 @@ img_05 = null
 img_06 = null
 img_07 = null
 sound_01 = null
-sound_02 = null
 
 [node name="VideoPlayer" type="TextureRect" parent="." index="0"]
 

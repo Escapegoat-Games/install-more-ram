@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Area.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/BG/town_01_0.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/Sprites/nasa_00.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/nasa_01 (2).png" type="Texture" id=7]
 [ext_resource path="res://Scripts/EndingNPC.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Sprites/ram_animated0006.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/ram_animated0007.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -26,13 +28,13 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="AreaNASA" type="Node2D"]
+[node name="AreaNASA" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 left_id = -1
@@ -95,9 +97,10 @@ textures = SubResource( 2 )
 
 [node name="EndingNPC" parent="NPCs" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( -358.29, 0 )
+position = Vector2( -358.29, -40 )
 script = ExtResource( 8 )
-dialogue_text = [ "I take you to moon" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+dialogue_text = [ "I'm sure you have had your misgivings about my coworker\\nbut she's just an honest-to-god moon-dreamer.", "but she's just an honest-to-god moon-dreamer", "", "" ]
 textures = SubResource( 3 )
 fail_dialogue_text = [ "You don't have enough ram!" ]
 

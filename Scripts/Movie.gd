@@ -15,7 +15,7 @@ export(Texture) var img_05
 export(Texture) var img_06
 export(Texture) var img_07
 export(AudioStream) var sound_01
-export(AudioStream) var sound_02
+var sound_02 = load("res://Assets/Video/intro_frames/camera-shutter-click-08.wav")
 
 var current_time = 0
 var audio_counter = 0

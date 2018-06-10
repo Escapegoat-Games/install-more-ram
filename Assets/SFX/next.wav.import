@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/next.wav-536c4ecc60ec371003bcba7ac1c33da1.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/next.wav"
+source_md5="4cb519559ca162d699561a75826ca5e4"
+
+dest_files=[ "res://.import/next.wav-536c4ecc60ec371003bcba7ac1c33da1.sample" ]
+dest_md5="7b054de71005410c6f9db981fe9d5428"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
