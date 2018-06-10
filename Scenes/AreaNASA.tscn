@@ -100,8 +100,12 @@ textures = SubResource( 2 )
 position = Vector2( -358.29, -40 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-dialogue_text = [ "I'm sure you have had your misgivings about my coworker\\nbut she's just an honest-to-god moon-dreamer.", "but she's just an honest-to-god moon-dreamer", "", "" ]
+dialogue_text = [ "I'm sure you've had your misgivings about my coworker
+but she's just an honest-to-god moon-dreamer.", "Turns out our lunar module chips fried yesterday,
+so the mission's done for unless we can get more.", "Y'all look like promising young folk, so tell you what:
+Get me enough ram, and I might be able to send you to the moon." ]
 textures = SubResource( 3 )
-fail_dialogue_text = [ "You don't have enough ram!" ]
+fail_dialogue_text = [ "Aw. You don't have enough ram!", "Eek! Her foot stomping's intensified!", "You know how it is with engineers... Try to find more ram!
+...For my sake. Please..." ]
 
 
