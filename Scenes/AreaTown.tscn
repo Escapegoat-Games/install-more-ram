@@ -1,17 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Area.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/BG/town_00_2.png" type="Texture" id=2]
 [ext_resource path="res://Instances/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sprites/sign_fin.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/mailbox_fin.png" type="Texture" id=5]
+[ext_resource path="res://Instances/AnimatedNPC.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sprites/pizza_dude0000.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/pizza_dude_20000.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 500 )
 
-[node name="AreaTown" type="Node2D" index="0"]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="AreaTown" type="Node2D"]
 
 z_index = -101
 script = ExtResource( 1 )
@@ -86,7 +98,16 @@ texture = ExtResource( 5 )
 
 position = Vector2( 911.521, 0 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-dialogue_text = [ "Jerry's House", "I wish I worked at NASA" ]
+dialogue_text = [ "Jerry's House", "Don't steal my mail!", "> Stole envelope (2x)!", "Tasty..." ]
 texture = ExtResource( 5 )
+
+[node name="AnimatedNPC_pizzaman" parent="NPCs" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( -326.616, -30 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+dialogue_text = [ "Now I may be a simple rocket physicist working part-time
+at a pizza parlor...", "...but I couldn't help but notice that controller interface.", "Chef Giulliano sends his regards to you ambitious folk!
+Here have a treat.", "> Received pizza bite (1x)!", "It's greasy..." ]
+textures = SubResource( 2 )
 
 

@@ -36,7 +36,6 @@ func _process(delta):
 			
 			# play celebration
 			if current_text_index-1 == 0 and current_text[current_array_index][current_text_index-1] == ">":
-				print("hi")
 				sfx_player.stream = sfx_05
 				sfx_player.play()
 			

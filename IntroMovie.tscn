@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/Movie.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/IntroMovie.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Video/intro_frames/intro_text_00.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Video/intro_frames/intro_00.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Video/intro_frames/intro_text_01.png" type="Texture" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Video/intro_frames/intro_02_edited.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Video/intro_frames/intro_text_03.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Video/intro_frames/camera-shutter-click-01.wav" type="AudioStream" id=9]
+
 
 [node name="IntroMovie" type="MarginContainer"]
 

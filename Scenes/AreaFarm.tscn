@@ -1,12 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Area.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/BG/town_03_0.png" type="Texture" id=2]
+[ext_resource path="res://Instances/AnimatedNPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sprites/farmer_000000.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/farmer_010000.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 500 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="AreaFarm" type="Node2D"]
 
@@ -57,5 +69,14 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 1 )
 
 [node name="NPCs" type="Node2D" parent="." index="1"]
+
+[node name="AnimatedNPC_farmer" parent="NPCs" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 230.505, 0 )
+dialogue_text = [ "Can you believe it?! My sheep have staged their
+3rd rebellion this week!", "Now I like to imagine myself as the proponent of
+open-range pasture and all, but Jesus! Let a man have his peace!", "If y'all don't mind, take care of my buddies for me will ya?", "'Specially Fluffybutter...
+That dude's outta his mind." ]
+textures = SubResource( 2 )
 
 

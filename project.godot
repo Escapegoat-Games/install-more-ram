@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="installMoreRam"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://IntroMovie.tscn"
 boot_splash/image="res://logo_splash.png"
 config/icon="res://icon.png"
 

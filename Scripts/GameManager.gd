@@ -36,7 +36,7 @@ func _ready():
 		"Radical.",
 	]
 	event_rams[1].position.x = -500
-	event_rams[1].area = 1
+	event_rams[1].area = 2
 	event_rams[1].dialogue_text = [
 		"Hey, remember me?\nIt's your brother, Shep!",
 		"..............................................",
@@ -88,7 +88,7 @@ func _on_Player_move_right_area():
 		emit_signal("moved_right")
 
 func _on_HUD_check_end_game():
-	if ram_count == 3:
+	if ram_count == 0:
 		print("end game")
 		get_tree().change_scene("res://EndingMovie.tscn")
 		print("end game done")
